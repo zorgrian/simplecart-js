@@ -23,6 +23,8 @@ downloads area
 
 ## Quick Start
 
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/End_of_a_Long_Day%2C_Start_of_a_Late_Night_-_Flickr_-_Joe_Parks.jpg/1024px-End_of_a_Long_Day%2C_Start_of_a_Late_Night_-_Flickr_-_Joe_Parks.jpg)
+
 To get started, just add the simpleCart javascript file to your page, and set your PayPal checkout:
 
 ```html
