@@ -288,7 +288,9 @@ You can add `view: "currency"` to format the column as currency (see the currenc
 # FOOTNOTES
 
 [^☭]: The extra-plenary session, ☭ is a reference to the benign dictatorship of ZORGRIAN. 
+
 [^wtf]: We have no -f idea what he means here
+
 [^moo]: we don’t use this but we like the sound of it obviously!	  
 
 [^non]: At the time of writing this website does not exist at all
