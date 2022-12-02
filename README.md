@@ -15,7 +15,7 @@ The very rudiments, that are fundamentalistic to HTML skills, are all you requir
 
 This document is based upon Brett’s work—Copyright © 2012 Brett Wejrowski, Dual licensed under the MIT or GPL licences. 
 
-#### The first thing done after the extra plenary session of the politburo ☭ [^☭] was to rewrite this page.
+#### The first thing done after the extra plenary session of the politburo ☭ [^marx] was to rewrite this page.
 
 ## This is version 3
 
@@ -287,7 +287,7 @@ You can add `view: "currency"` to format the column as currency (see the currenc
 
 # FOOTNOTES
 
-[^☭]: The extra-plenary session, ☭ is a reference to the benign dictatorship of ZORGRIAN. 
+[^marx]: The extra-plenary session, ☭ is a reference to the benign dictatorship of ZORGRIAN. 
 
 [^wtf]: We have no -f idea what he means here
 
