@@ -2,16 +2,24 @@
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Line_of_shopping_carts.jpg/1280px-Line_of_shopping_carts.jpg)
 
-**No databases or programming are needed.** A simple JavaScript shopping cart that can be set up in minutes. It is a lightweight, fast, simple to use, and highly customizable application. All you need to have is the very rudiments of fundamentalistic **HTML** skills.
+
+## No databases or programming
+
+**No databases or programming are needed.** This is a simple JavaScript shopping cart that can be set up in minutes. It is a lightweight, fast, simple to use, and highly customizable application. 
+
+## Rudiments
+
+The very rudiments, that are fundamentalistic to HTML skills, are all you require.
+
+## Based
 
 This document is based upon Brett’s work—Copyright © 2012 Brett Wejrowski, Dual licensed under the MIT or GPL licences. 
 
-#### The first thing done after the extra plenary session of the politburo ☭ was to rewrite this page.
+#### The first thing done after the extra plenary session of the politburo ☭ [^☭] was to rewrite this page.
 
 ## This is version 3
 
-If you would like to use an older version, you can use a different branch or see them in the 
-downloads area
+If you are interested in using a much older and dubious version, you can look for another branch in the downloads area. However, you might not be successful.
 
 ### v3.0.5 change log
 
@@ -47,7 +55,7 @@ To get started, just add the simpleCart javascript file to your page, and set yo
 
 
 
-```html
+```javascript
 simpleCart({
 	checkout: { 
 		type: "PayPal" , 
@@ -64,7 +72,7 @@ simpleCart({
 
 
 ```html
-htm<div class="simpleCart_shelfItem">
+<div class="simpleCart_shelfItem">
     <h2 class="item_name"> Awesome T-shirt </h2>
     <input type="text" value="1" class="item_Quantity">
     <span class="item_price">$35.99</span>
@@ -111,140 +119,176 @@ is needed as long as one of those libraries is included on the page
 You can set/change simpleCart options at any time:
 	
 
-	simpleCart({
-		option1: "value" ,
-		option2: "value2" 
-	});
+```javascript
+simpleCart({
+	option1: "value" ,
+	option2: "value2" 
+});
+```
 
 
-​	
-Here are the possible options and their default values: 
+### Here are the possible options and their default values: 
 
-	simpleCart({
+```javascript
+simpleCart({
 		
-		// array representing the format and columns of the cart, see 
-		// the cart columns documentation
-		cartColumns: [
-			{ attr: "name" , label: "Name" },
-			{ attr: "price" , label: "Price", view: 'currency' },
-			{ view: "decrement" , label: false },
-			{ attr: "quantity" , label: "Qty" },
-			{ view: "increment" , label: false },
-			{ attr: "total" , label: "SubTotal", view: 'currency' },
-			{ view: "remove" , text: "Remove" , label: false }
-		],
+	// array representing the format and columns of the cart, see 
+	// the cart columns documentation
+	cartColumns: [
+		{ attr: "name" , label: "Name" },
+		{ attr: "price" , label: "Price", view: 'currency' },
+		{ view: "decrement" , label: false },
+		{ attr: "quantity" , label: "Qty" },
+		{ view: "increment" , label: false },
+		{ attr: "total" , label: "SubTotal", view: 'currency' },
+		{ view: "remove" , text: "Remove" , label: false }
+	],
+
+// "div" or "table" - builds the cart as a table or collection of divs
+cartStyle: "div", 
 		
-		// "div" or "table" - builds the cart as a table or collection of divs
-		cartStyle: "div", 
+// how simpleCart should checkout, see the checkout reference for more info 
+
+checkout: { 
+		type: "PayPal" , 
+		email: "you@yours.com" 
+	},
 		
-		// how simpleCart should checkout, see the checkout reference for more info 
-		checkout: { 
-			type: "PayPal" , 
-			email: "you@yours.com" 
-		},
+// set the currency, see the currency reference for more info
+currency: "USD",
 		
-		// set the currency, see the currency reference for more info
-		currency: "USD",
+// collection of arbitrary data you may want to store with the cart, 
+// such as customer info
+
+data: {},
+
+// set the cart langauge (may be used for checkout)
+
+language: "english-us",
+
+// array of item fields that will not be sent to checkout
+
+excludeFromCheckout: [],
+
+// custom function to add shipping cost
+
+shippingCustom: null,
 		
-		// collection of arbitrary data you may want to store with the cart, 
-		// such as customer info
-		data: {},
+// flat rate shipping option
+
+shippingFlatRate: 0,
 		
-		// set the cart langauge (may be used for checkout)
-		language: "english-us",
+// added shipping based on this value multiplied by the cart quantity
+
+shippingQuantityRate: 0,
+
+// added shipping based on this value multiplied by the cart subtotal
+
+shippingTotalRate: 0,
+
+// tax rate applied to cart subtotal
+
+taxRate: 0,
 		
-		// array of item fields that will not be sent to checkout
-		excludeFromCheckout: [],
-		
-		// custom function to add shipping cost
-		shippingCustom: null,
-		
-		// flat rate shipping option
-		shippingFlatRate: 0,
-		
-		// added shipping based on this value multiplied by the cart quantity
-		shippingQuantityRate: 0,
-		
-		// added shipping based on this value multiplied by the cart subtotal
-		shippingTotalRate: 0,
-		
-		// tax rate applied to cart subtotal
-		taxRate: 0,
-		
-		// true if tax should be applied to shipping
-		taxShipping: false,
-		
-		// event callbacks 
-		beforeAdd				: null,
-		afterAdd				: null,
-		load					: null,
-		beforeSave				: null,
-		afterSave				: null,
-		update					: null,
-		ready					: null,
-		checkoutSuccess				: null,
-		checkoutFail				: null,
-		beforeCheckout				: null
-	});
+// true if tax should be applied to shipping
+
+taxShipping: false,
+
+// event callbacks 
+
+beforeAdd			: null,
+afterAdd			: null,
+load				: null,
+beforeSave			: null,
+afterSave			: null,
+update				: null,
+ready				: null,
+checkoutSuccess		: null,
+checkoutFail		: null,
+beforeCheckout		: null
+});
+```
+
+
+
 
 
 ## The Shelf
 
-You can make items be available to your users by simple using class names in your html. For any Item you want to be available to be added to the cart, you make a container with a class name of `simpleCart_shelfItem`. Then add classes to tags inside of that container that have the general form `item_[name of field]` and simpleCart will use the value or innerHTML of that tag for the cart. For example, if you wanted to sell a T-shirt with 3 different sizes, you can do this:
+You can make items available to your users by using class names in your HTML. For any Item, you want to be available to be added to the cart, you make a container with a class name of `simpleCart_shelfItem`. And then add classes to tags inside that container that have the general form `item_[name of field]` and simpleCart will use the value or inner HTML of that tag for the cart. 
 
-    <div class="simpleCart_shelfItem">
-    	<h2 class="item_name"> Awesome T-shirt </h2>
-    	<select class="item_size">
-        	<option value="Small"> Small </option>
-        	<option value="Medium"> Medium </option>
-        	<option value="Large"> Large </option>
-    	</select>
-    	<input type="text" value="1" class="item_Quantity">
-    	<span class="item_price">$35.99</span>
-    	<a class="item_add" href="javascript:;"> Add to Cart </a>
-    </div>
+#### For example, if you wanted to sell a T-shirt with 3 different sizes, you might do this:
+
+
+```HTML
+<div class="simpleCart_shelfItem">
+   	<h2 class="item_name"> Awesome T-shirt </h2>
+   	<select class="item_size">
+       	<option value="Small"> Small </option>
+       	<option value="Medium"> Medium </option>
+       	<option value="Large"> Large </option>
+	   	</select>
+   			<input type="text" value="1" class="item_Quantity">
+   			<span class="item_price">$35.99</span>
+   			<a class="item_add" href="javascript:;"> Add to Cart </a>
+</div>
+```
 
 Notice here that you can use a select to change options for the item when you add it to the cart. You can also use a text input to change the quantity (or any other field!). These classes will work with any tag, so feel free to use what works best for you. Finally, notice that a tag with the class `item_add` will have an event listener on its click. So when the contents of that tag are clicked, an item will be added to the cart with the values of each of the tags in the container with the `item_something` class.
 
-#### Some notes:
-1. You will want to always supply a quantity and price. Although the cart won't break if you don't, all the quantities and totals are created from it, so the cart will assign a price of $0 if there is none, and a quantity of 1 if no quantity is provided.
+### Some notes:
 
-1. If you are planning on checking out to google Checkout or paypal, it is a good idea to use a name field
+1. The quantity and price must be supplied by **you**. Although the cart won't break if you don't specify numbers, **I recommend that you do!** 
+   1. The cart will set a price of $0 if there are no numbers or totals, 
+   1. and a quantity of 1 if no quantity is given.
 
-1. If you use a link for the add to cart button, its a good idea to set the href to `"javascript:;"`
+1. If you are planning to use Google Checkout or PayPal, it is a essential to use a name field.
+
+1. If you are using a link for the add to cart button, it is a good idea to set the href to `javascript:;`
 
 ## Cart Columns
 
-The Cart Columns allow the user to specify how the cart will be formatted and displayed. There is a lot of flexibility here, take a look at the default setup:
+**The Cart Columns allow the user to customize the format and display of the cart. Take a look at the default setup to see how much flexibility there is.** 
 
-    simpleCart({
-    	cartColumns: [
-    		{ attr: "name" , label: "Name" } ,
-    		{ attr: "price" , label: "Price", view: 'currency' } ,
-    		{ view: "decrement" , label: false , text: "-" } ,
-    		{ attr: "quantity" , label: "Qty" } ,
-    		{ view: "increment" , label: false , text: "+" } ,
-    		{ attr: "total" , label: "SubTotal", view: 'currency' } ,
-    		{ view: "remove" , text: "Remove" , label: false }
-    	]
-    });
+**Note: There is doubt at the time of writing. This will only add stress and anxiety to the whole thing, as the documentation does indeed need to be clarified.  I am personally in the process of doing the needed work.
+**
 
-Each column is represented by an object, the most basic setup simple specifies which attribute to display and how to label the column: 
+```javascript
+simpleCart({
+	cartColumns: [
+		{ attr: "name" , label: "Name" } ,
+		{ attr: "price" , label: "Price", view: 'currency' } ,
+		{ view: "decrement" , label: false , text: "-" } ,
+		{ attr: "quantity" , label: "Qty" } ,
+		{ view: "increment" , label: false , text: "+" } ,
+		{ attr: "total" , label: "SubTotal", view: 'currency' } ,
+		{ view: "remove" , text: "Remove" , label: false }
+	]
+});
+```
 
-    { attr: "name" , label: "Name" }
+Each column is represented by an object, and the most basic setup specifies which attribute to display and how to label it.
 
-There are also some built in 'views' that will create a special column.  For example, an 'increment' view: 
+```javascript
+{ attr: "name" , label: "Name" }
+```
 
-    { view: "increment" , label: false , text: "+" }
+There are also some built in 'views' that will create a special column.  
 
-will have a link that increments the quantity. Setting the `label:false` will hide the label for the view. You can specify the text of the link with that `text:` attribute.
+```javascript
+{ view: "increment" , label: false , text: "+" }
+```
+
+For example, an 'increment' view, will have a link that increments the quantity. Setting the `label:false` will hide the label for the view. You can specify the text of the link with that `text:` attribute.
 
 You can add `view: "currency"` to format the column as currency (see the currency section on more information on currency formatting). 
 
-**For more information, please go to simplecartjs.com**							
+**For more information, please go to simplecartjs.com** [^non]				
 
 # FOOTNOTES
 
+[^☭]: The extra-plenary session, ☭ is a reference to the benign dictatorship of ZORGRIAN. 
 [^wtf]: We have no -f idea what he means here
 [^moo]: we don’t use this but we like the sound of it obviously!	  
-		
+
+[^non]: At the time of writing this website does not exist at all
