@@ -1,5 +1,7 @@
 # simpleCart(js)
 
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Line_of_shopping_carts.jpg/1280px-Line_of_shopping_carts.jpg)
+
 **No databases or programming are needed.** A simple JavaScript shopping cart that can be set up in minutes. It is a lightweight, fast, simple to use, and highly customizable application. All you need to have is the very rudiments of fundamentalistic **HTML** skills.
 
 This document is based upon Brett’s work—Copyright © 2012 Brett Wejrowski, Dual licensed under the MIT or GPL licences. 
