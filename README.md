@@ -43,7 +43,7 @@ To get started, just add the simpleCart javascript file to your page, and set yo
 
 ## To change options, like the tax or currency:
 
-![](https://upload.wikimedia.org/wikipedia/commons/3/38/10000_Rupees_Currency_Issued_by_Government_of_India.jpg)
+![](https://upload.wikimedia.org/wikipedia/commons/3/37/Publication_as_new_currency.jpg)
 
 
 
