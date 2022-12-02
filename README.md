@@ -4,7 +4,7 @@
 
 This document is based upon Brett’s work—Copyright © 2012 Brett Wejrowski, Dual licensed under the MIT or GPL licences. 
 
-#### The first thing done after the extra plenary session of the politburo ☭ was to rewrite this page.**
+#### The first thing done after the extra plenary session of the politburo ☭ was to rewrite this page.
 
 ## This is version 3
 
